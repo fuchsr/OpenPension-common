@@ -1,6 +1,7 @@
 exports.getMetaTable = function(){
 
-	var parsedLines = require('fs').readFileSync(__dirname + '/mt_source.csv').toString().split("\n")
+	var parsedLines = require('fs').readFileSync(__dirname + '/mt_source.csv').toString().split("\n").filter(function(l){ return !!l; });
+
 
 	//TODO: trim all values
 	var metaTable = {
